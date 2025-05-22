@@ -8,9 +8,11 @@ import ReedSolomon from "./reedsolomon";
 
 const kioqr = new KioQR();
 const data = "https://kibaofficial.net";
+
 const bitstream = kioqr.dataToBitstream(data);
 const fullBitstream = kioqr.createFullBitstream(bitstream);
 const paddedBitstream = kioqr.addPadding(fullBitstream);
+const byteArray = kioqr.paddedBitstreamToByteArray(paddedBitstream);
 
 const dataBytes = kioqr.paddedBitstreamToByteArray(paddedBitstream);
 
